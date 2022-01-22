@@ -1,0 +1,14 @@
+version: '2'
+services:
+  beers-service:
+    container_name: beers-service
+    build:
+      dockerfile: Dockerfile
+    image: beers-service:latest
+    ports:
+      - 8081:8081
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
