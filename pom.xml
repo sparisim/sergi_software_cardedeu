@@ -30,9 +30,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.0.0</version>
-                <configuration>
-                    <finalName>beers-service</finalName>
-                </configuration>
+
             </plugin>
         </plugins>
     </build>
