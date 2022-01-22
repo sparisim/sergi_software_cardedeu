@@ -1,4 +1,4 @@
-package com.bskyb.rest;
+package com.beers;
 
 
 import org.springframework.boot.SpringApplication;

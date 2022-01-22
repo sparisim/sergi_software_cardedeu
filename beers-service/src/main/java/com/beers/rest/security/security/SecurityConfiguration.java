@@ -1,4 +1,4 @@
-package com.bskyb.rest.security;
+package com.beers.rest.security.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
