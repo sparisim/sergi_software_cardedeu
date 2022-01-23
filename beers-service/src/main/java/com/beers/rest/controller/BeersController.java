@@ -70,12 +70,12 @@ public class BeersController {
     @PutMapping(value="/updateBeer", params={"beerId"})
     public ResponseEntity<?> updateBeer(@RequestParam String beerId, @RequestBody Beer beer) {
 
-        Beer beerUpdate = repository.getById(beerId);
-        if(repository.existsById(beerId)) {
-            beerUpdate.setManufacturer(beer.getManufacturer());
-            beerUpdate.setName(beer.getName());
-            beerUpdate.setGraduation(beer.getGraduation());
-            Beer savedBeer = repository.save(beerUpdate);
+        Optional<Beer> beerUpdate = repository.findById(beerId);
+        if(beerUpdate.isPresent()) {
+            beerUpdate.get().setManufacturer(beer.getManufacturer());
+            beerUpdate.get().setName(beer.getName());
+            beerUpdate.get().setGraduation(beer.getGraduation());
+            Beer savedBeer = repository.save(beerUpdate.get());
 
             return new ResponseEntity<String>(savedBeer.getId(), HttpStatus.OK);
         }
