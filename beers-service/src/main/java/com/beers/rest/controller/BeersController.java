@@ -3,7 +3,6 @@ package com.beers.rest.controller;
 import com.beers.repository.model.Beer;
 import com.beers.repository.configuration.BeerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,10 +20,7 @@ public class BeersController {
     @GetMapping(value="/getCatalogueBeerId", produces = MediaType.APPLICATION_JSON_VALUE, params = {"beerId"})
     public ResponseEntity<?> getCatalogueBeerId(@RequestParam(required = false) String beerId) {
 
-        Beer beerCriteria = new Beer();
-        beerCriteria.setId(beerId);
-        Example<Beer> example = Example.of(new Beer());
-        Optional<Beer> beer = repository.findOne(example);
+        Optional<Beer> beer = repository.findById(beerId);
 
         if (beer.isPresent()) {
             return new ResponseEntity<>(beer, HttpStatus.OK);
