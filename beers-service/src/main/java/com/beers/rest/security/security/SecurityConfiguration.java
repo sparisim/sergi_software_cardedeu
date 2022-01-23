@@ -10,7 +10,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        //TODO - Add Configuration to define actions according roles
+        //TODO - Add Configuration to define actions according roles - By now all requests all are allowed
+        http.csrf().disable();
+        http.authorizeRequests().anyRequest().permitAll();
     }
 
 }
