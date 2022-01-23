@@ -23,7 +23,6 @@
     <modules>
         <module>beers-service</module>
         <module>beers-reposoitory</module>
-        <module>beers-integration-test</module>
     </modules>
 
     <build>
