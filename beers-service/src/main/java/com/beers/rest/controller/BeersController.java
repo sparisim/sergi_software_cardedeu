@@ -56,7 +56,7 @@ public class BeersController {
     }
 
     @DeleteMapping(value="/deleteCatalogueBeerId", params = {"beerId"})
-    public ResponseEntity<?> addingBeer(@RequestParam String beerId) {
+    public ResponseEntity<?> deleteBeer(@RequestParam String beerId) {
 
         if(repository.existsById(beerId)) {
             repository.deleteById(beerId);

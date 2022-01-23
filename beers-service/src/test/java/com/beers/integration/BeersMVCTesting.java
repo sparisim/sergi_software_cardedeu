@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(BeersController.class)
-public class BeeersMVCTesting {
+public class BeersMVCTesting {
 
     @Autowired
     private MockMvc mockMvc;
