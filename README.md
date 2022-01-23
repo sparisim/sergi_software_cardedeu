@@ -3,7 +3,8 @@
 Check Api Documentation<br/>
 http://localhost:8080/swagger-ui.html
 
-**Start docker**<br/>
+**<u>Start docker</u>**<br/>
+
 Run a build as usual, executing next command mvn clean install
 
 * For windows machine run docker-start-windows script
@@ -19,7 +20,8 @@ The docker image/container could be created directly using the mvn repackage giv
 
 Also, if it assumes that the operating system were always the same operating system, it could create the docker container/image during the build using running the script with maven plugins.
 
-** Basic API ** 
+**<u>Basic API</u>** 
+
 By now all requests are allowed. In a future version the acccess will be restricted
 
 * find one - http://localhost:8080/getCatalogueBeerId?beerId={beerId} - Http.OK if it finds, otherwise returns 404
@@ -35,7 +37,11 @@ By now all requests are allowed. In a future version the acccess will be restric
 Updating - http://localhost:8080/updateBeer?beerId=1 - If exists update all values else eihter existing beer or other issue. In that case returning 404. 
 * delete http://localhost:8080/deleteCatalogueBeerId?beerId={beerId} Returns OK, if it has been removed, otherwise returns BAD_REQUEST
 
- Obviously, the api can be improved and new feautrs will be added in future versions
+**<u>Future</u>**
 
+Obviously, the api can be improved and new feautrs will be added in future versions
+ 
+Due to deadline, for future versions, the logic in the controller, a service interface , a service implementation will be added. Also, a criteria and a new module beers-common
 
+Also features and cucumber will be added. A test containers library will be used to creating the necesary docker images to work properly.
 
