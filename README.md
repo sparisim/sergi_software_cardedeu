@@ -1,5 +1,13 @@
 # sergi_software_cardedeu
 
+* To start the application either an ide and to open the BeersApplication and to run it
+* Also it can be run using the java -jar beers-service-1.0-SNAPSHOT.jar
+
+By default the application will start under port 8080. To change that port, two optionsÑ
+
+* In the resources, creting an application.properties file and to add the property server.port
+*java 'jar beers-service-1.0-SNAPSHOT.jar -Dserver.port=8081
+ 
 Check Api Documentation<br/>
 http://localhost:8080/swagger-ui.html
 
@@ -35,13 +43,17 @@ By now all requests are allowed. In a future version the acccess will be restric
  "name": "Free Dam"
 }
 Updating - http://localhost:8080/updateBeer?beerId=1 - If exists update all values else eihter existing beer or other issue. In that case returning 404. 
+- Example Request {
+ "manufacturer":"Damm",
+ "graduation":8,
+ "name": "Free Dam"
+}
 * delete http://localhost:8080/deleteCatalogueBeerId?beerId={beerId} Returns OK, if it has been removed, otherwise returns BAD_REQUEST
 
 **<u>Future</u>**
 
-Obviously, the api can be improved and new feautrs will be added in future versions
+* Obviously, the api can be improved and new feautrs will be added in future versions
  
-Due to deadline, for future versions, the logic in the controller, a service interface , a service implementation will be added. Also, a criteria and a new module beers-common
+* Due to deadline, for future versions, the logic in the controller, a service interface , a service implementation will be added. Also, a criteria and a new module beers-common
 
-Also features and cucumber will be added. A test containers library will be used to creating the necesary docker images to work properly.
-
+* Also features and cucumber will be added. A test containers library will be used to creating the necesary docker images to work properly.
